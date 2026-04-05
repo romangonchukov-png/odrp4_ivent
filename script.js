@@ -54,17 +54,146 @@
             role: "Глава ивент-отдела",
             discord: "565584233981280270",
             status: "Онлайн",
-            eventsCount: 12,
+            eventsCount: "-",
             joinDate: "01.01.25",
             rating: "Судо-Куратор",
             fullDetails: {
-                responsibilities: "Координация всех мероприятий, финальное утверждение, обзвон ключевых участников",
+                responsibilities: "Имеет полное владение над отделом Ивентологии, может самостоятельно изменять состав отдела Ивентологии и их норму/правила.",
+                contacts: "",
+                achievements: "",
+                notes: ""
+            }
+        },
+        {
+            id: 2,
+            name: "Гербикс",
+            role: "Зам.Главы ивент-отдела",
+            discord: "694286975158583317",
+            status: "Онлайн",
+            eventsCount: "-",
+            joinDate: "01.01.25",
+            rating: "Ассистент",
+            fullDetails: {
+                responsibilities: "Имеет все полномочия нижестоящих рангов, а также имеет право набирать новых кадров в отдел, определять курс развития отдела и изменять норму и правила с разрешения/уведомления об этом Главы Ивентологии.",
+                contacts: "",
+                achievements: "",
+                notes: ""
+            }
+        },
+        {
+            id: 3,
+            name: "Arbuz Madrazo",
+            role: "Ст.Ивентер",
+            discord: "1066705962972495922",
+            status: "Онлайн",
+            eventsCount: "-",
+            joinDate: "01.01.25",
+            rating: "Ст.Администратор",
+            fullDetails: {
+                responsibilities: "Имеет все полномочия Ивентера, а также имеет право корректировать работу Ивентеров и давать рекомендации по поводу ивентов, выдавать наказания за их ошибки, а также одобрять отчётности.",
+                contacts: "",
+                achievements: "",
+                notes: ""
+            }
+        },
+        {
+            id: 4,
+            name: "T1Ran",
+            role: "Ивентер",
+            discord: "1246076621484724320",
+            status: "Онлайн",
+            eventsCount: "-",
+            joinDate: "14.03.26",
+            rating: "Оператор",
+            fullDetails: {
+                responsibilities: "Отвечает за таблицу ТАКЖЕ: Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до  завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту. ",
+                contacts: "",
+                achievements: "",
+                notes: ""
+            }
+        },
+        {
+            id: 5,
+            name: "ratatu1cc",
+            role: "Ивентер",
+            discord: "1285106008393257057",
+            status: "Заморозка",
+            eventsCount: "-",
+            joinDate: "14.03.26",
+            rating: "Модератор",
+            fullDetails: {
+                responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до  завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту. ",
+                contacts: "",
+                achievements: "",
+                notes: ""
+            }
+        },
+        {
+            id: 6,
+            name: "Дмитрий Морозов",
+            role: "Ивентер",
+            discord: "859747626115006474",
+            status: "Онлайн",
+            eventsCount: "-",
+            joinDate: "30.03.26",
+            rating: "Оператор",
+            fullDetails: {
+                responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до  завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту. ",
+                contacts: "",
+                achievements: "",
+                notes: ""
+            }
+        },
+        {
+            id: 7,
+            name: "Nintendo",
+            role: "Ивентер",
+            discord: "1160166622703652905",
+            status: "Онлайн",
+            eventsCount: "-",
+            joinDate: "31.03.26",
+            rating: "Модератор",
+            fullDetails: {
+                responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до  завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту. ",
+                contacts: "",
+                achievements: "",
+                notes: ""
+            }
+        },
+        {
+            id: 8,
+            name: "moddex",
+            role: "Ивентер",
+            discord: "369060875971198979",
+            status: "Онлайн",
+            eventsCount: "-",
+            joinDate: "01.04.26",
+            rating: "Администратор",
+            fullDetails: {
+                responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до  завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту. ",
+                contacts: "",
+                achievements: "",
+                notes: ""
+            }
+        },
+                {
+            id: 9,
+            name: "sh1zy",
+            role: "Ивентер",
+            discord: "1341764295201128468",
+            status: "Онлайн",
+            eventsCount: "-",
+            joinDate: "03.04.26",
+            rating: "Модератор",
+            fullDetails: {
+                responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до  завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту. ",
                 contacts: "",
                 achievements: "",
                 notes: ""
             }
         },
     ];
+    
 
     let nextEventId = 5;
     let nextTeamId = 5;
@@ -75,7 +204,6 @@
         container.innerHTML = `
             <div class="page-header">
                 <h2><i class="fas fa-calendar-alt"></i> Таблица мероприятий</h2>
-                <button class="add-btn" id="openAddEventBtn"><i class="fas fa-plus"></i> Добавить ивент</button>
             </div>
             <div class="click-hint">
                 <i class="fas fa-mouse-pointer"></i> <span>Нажмите строку которая вам понравилась - Полная информация об ивенте</span>
@@ -113,7 +241,6 @@
         container.innerHTML = `
             <div class="page-header">
                 <h2><i class="fas fa-users"></i> Команда ивент-отдела</h2>
-                <button class="add-btn" id="openAddMemberBtn"><i class="fas fa-user-plus"></i> Добавить участника</button>
             </div>
             <div class="click-hint">
                 <i class="fas fa-mouse-pointer"></i> <span>Нажмите на строку участника — полная информация</span>
@@ -205,7 +332,7 @@
             <div class="detail-row"><span class="detail-label">Роль:</span><span>${member.role}</span></div>
             <div class="detail-row"><span class="detail-label">Discord:</span><span>${member.discord}</span></div>
             <div class="detail-row"><span class="detail-label">Статус:</span><span>${member.status}</span></div>
-            <div class="detail-row"><span class="detail-label">Проведено ивентов:</span><span>${member.eventsCount}</span></div>
+            <div class="detail-row"><span class="detail-label">Проведено ивентов в неделю:</span><span>${member.eventsCount}</span></div>
             <div class="detail-row"><span class="detail-label">Дата вступления:</span><span>${member.joinDate}</span></div>
             <div class="detail-row"><span class="detail-label">Должность:</span><span>${member.rating} ★</span></div>
             <div style="margin-top: 12px; background: var(--card-bg); padding: 12px; border-radius: 24px; border:1px solid var(--card-border);">
@@ -215,10 +342,8 @@
                 <div><i class="fas fa-trophy"></i> ${member.fullDetails.achievements}</div>
                 <div><i class="fas fa-sticky-note"></i>${member.fullDetails.notes}</div>
             </div>
-            <button id="openDiscordFromModal" style="margin-top: 12px; background:#5865F2; border:none; padding:0.5rem; border-radius:30px; cursor:pointer; width:100%;"><i class="fab fa-discord"></i> Написать в Discord</button>
         `;
         document.getElementById('infoModal').style.display = 'flex';
-        document.getElementById('openDiscordFromModal')?.addEventListener('click', () => window.open('https://discord.com/channels/@me', '_blank'));
     }
 
     // ========== ФОРМЫ ДОБАВЛЕНИЯ ==========
@@ -262,7 +387,6 @@
     function showAddMemberForm() {
         const container = document.getElementById('eventDynamicContent');
         container.innerHTML = `
-            <div class="page-header"><h2><i class="fas fa-user-plus"></i> Новый участник команды</h2>
             <button class="add-btn" id="backToTeamBtn"><i class="fas fa-arrow-left"></i> Назад</button></div>
             <div style="background:var(--card-bg); border-radius:28px; padding:1.8rem; border:1px solid var(--card-border);">
                 <div class="form-group"><label>Имя *</label><input type="text" id="newMemberName"></div>
@@ -336,8 +460,45 @@
                 document.getElementById('eventDynamicContent').innerHTML = `
                     <div class="page-header"><h2><i class="fas fa-book"></i> Методичка</h2></div>
                     <div style="background:var(--card-bg); border-radius:28px; padding:1.5rem; border:1px solid var(--card-border);">
-                        <p>📌 Стандарты обзвона участников:</p>
-                        <ul style="margin:1rem 0 0 1.5rem;"><li>Оповещение за 3 дня</li><li>Фиксация подтверждений</li><li>Оценка ошибок 1-5</li></ul>
+                        <b><p style="text-align: center; font-size: 39px; font-family: 'Courier New', Courier, monospace; color: #fd72f4;">Методичка Ивентологов</p></b>
+
+                        ⠀<b><p style="text-align: center; font-size: 36px; font-family: 'Courier New', Courier, monospace; color: #fd72f4;">ОСНОВНЫЕ ПРАВИЛА  ОТДЕЛА ИВЕНТОЛОГИИ⠀</p></b>
+                        <p>ㅤ</p>
+                        <b><p style="text-align: center; font-size: 35px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #882381;">⠀ЧТО МОЖНО ДЕЛАТЬ?</p></b>
+                        <p>ㅤ</p>
+                        <p>ㅤ</p>
+                        <div class="metod_one" style="padding: 10px; margin: 5px; border-radius: 18px;">
+                            <b><p style="font-size: 19px;" >Кто может проводить ивенты?</p></b>
+                            <p>Проводить ивенты можно с ранга «Оператор», если вы состоите в отделе Ивентологии.</p>
+                            <p style="color: #818181">С рангов ниже — только с разрешения Главы отдела или Куратора сервера.</p>
+
+                            <p>ㅤ</p>
+                            <b><p style="font-size: 19px;" >Кол-во администрации на ивенте</p></b>
+                            <p>В ивенте может участвовать не более 25% от всей наборной администрации.</p>
+                            <p style="color: #818181">(Например: 10 админов → максимум участвуют 3, округление вверх)</p>
+
+                            <p>ㅤ</p>
+                            <b><p style="font-size: 19px;" >Игнор завалов</p></b>
+                            <p>Если завал начался во время ивента, его разрешено игнорировать.</p>
+
+                            <p>ㅤ</p>
+                            <b><p style="font-size: 19px;" >Самостоятельность</p></b>
+                            <p>Каждый Ивентер может проводить ивенты без разрешения от Ст. Администрации.</p>
+                            <p style="color: #818181">Если ты на испытательном сроке — нужно одобрение от Ст. Ивентера.</p>
+
+                            <p>ㅤ</p>
+                            <b><p style="font-size: 19px;" >Награды</p></b>
+                            <p>Если игрок использует баги/преимущества/нарушал правила, что привело его к победе — Ивентер может не выдавать приз.</p>
+                            <p style="color: #818181">Если победа честная — Ивентер обязан выдать приз (если он конечно есть).</p>
+
+                            <p>ㅤ</p>
+                            <b><p style="font-size: 19px;" >RP-Мероприятия</p></b>
+                            <p>Помимо ивентов, вам также доступны РП-Мероприятия.
+                            Такие мероприятия представляют собой сюжетные или ситуационные ролевые отыгровки в пределах RP-зоны и направлены на создание “живого” игрового процесса.</p>
+                            <p style="color: #818181">РП-мероприятие засчитывается как полноценный ивент и учитывается в норме Ивентера. Призы за участие в РП-Мероприятиях можно не выдавать.</p>
+                        </div>
+
+
                     </div>
                 `;
             }
