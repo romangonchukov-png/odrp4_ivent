@@ -86,7 +86,7 @@
         .logo-area h1 {
             font-size: 1.9rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #FFB347, #FF6A5C, #C084FC);
+            background: linear-gradient(135deg, #ff47c8, #ff5c72, #C084FC);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -424,6 +424,7 @@
         .detail-label {
             font-weight: 600;
             color: #ffb27a;
+            
         }
 
         .close-modal {
@@ -501,4 +502,7 @@
             color: var(--footer-color);
             border-top: 1px solid var(--table-row-border);
             padding-top: 1.5rem;
+        }
+        .metod_one {
+            background-color: var(--input-bg)
         }
