@@ -2,38 +2,67 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>UnionTeam | Ивент-отдел — таблицы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Astra Team</title>
 </head>
 <body>
-    <h1>Astra Team</h1>
+<div class="dashboard">
+    <div class="top-bar">
+        <div class="logo-area">
+            <h1>UnionTeam · Ивент отдел Обычный Дарк РП 4</h1>
+            <span>Ивент-отдел | Ивенты, участники и самое нужное</span>
+        </div>
+        <div class="user-actions">
+            <div class="clock-wrapper">
+                <span class="clock-badge" id="liveClockEvent">--:--:--</span>
+            </div>
+            <button class="theme-toggle" id="themeToggleBtn" aria-label="Переключить тему">
+                🌞
+            </button>
+            <button class="logout-btn" id="logoutEventBtn"><i class="fas fa-sign-out-alt"></i>Перезагрузить</button>
+        </div>
+    </div>
 
-    <h2>
-        Мы команда Astra Team! 
-    </h2>
+    <div class="main-layout">
+        <div class="sidebar">
+            <div class="nav-section">
+                <div class="nav-title">ГЛАВНОЕ</div>
+                <div class="nav-item active" data-tab="events_table">
+                    <i class="fas fa-table"></i> <span>Таблица ивентов</span>
+                </div>
+                <div class="nav-item" data-tab="team_table">
+                    <i class="fas fa-users"></i> <span>Команда ивента</span>
+                </div>
+                <div class="nav-item" data-tab="new_event">
+                    <i class="fas fa-pl us-circle"></i> <span>Новый ивент</span>
+                </div>
+            </div>
+            <div class="nav-section">
+                <div class="nav-title">ПРОЧЕЕ</div>
+                <div class="nav-item" data-tab="event_guide">
+                    <i class="fas fa-book"></i> <span>Методичка</span>
+                </div>
+            </div>
+        </div>
 
-    <h3>    
-            Astra Team — киберспортивная организация, специализирующаяся на
-            дисциплине Counter‑Strike 2. Команда сочетает молодую энергию и стратегическую зрелость,
-            стремясь закрепиться в игре и регулярно выступать на праках и турнирах.
-    </h3>
+        <div class="content-area" id="eventDynamicContent"></div>
+    </div>
+    <footer>UnionTeam · Ивент-менеджмент — нажмите на строку для деталей</footer>
+</div>
 
-    <img src="https://i.ytimg.com/vi/QGJF2V6dYeg/maxresdefault.jpg" alt="Наш Дискорд Сервер" class="Discord">
+<!-- Модальное окно -->
+<div id="infoModal" class="modal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <span id="modalTitle"><i class="fas fa-info-circle"></i> Детали</span>
+            <button class="close-modal" id="closeModalBtn">&times;</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+    </div>
+</div>
 
-    <p class="Discord-Opesanie">
-            Дискорд - У нас есть дискорд сервер с уникальными ботами и ролями. Также
-            наш дискорд сервер очень активный и состоит из состава дискорд модераторов и 
-            Менеджеров. Уникальные роливые игры наподобие казино и разных козуальных игр
-    </p>
-
-    <img src="https://avatars.mds.yandex.net/i?id=dde6c0ff2e13a57ae5d40be5d22bf20c_l-5226902-images-thumbs&n=13" alt="Уровни Faceit" class="Faceit">
-
-    <p class="Faceit-Opisanie">
-        У наших игроков уровни Faceit от 6 lvl. Для академии другой подход от 3 lvl.
-        Для людей у которых 4 lvl или 5 lvl могут встать в замену или попасть в основной
-        состав.Если у вас нету Faceit то можно попасть в основной состав в зависемости
-        от количеста ваших часов и онлайна в день.
-    </p>
+<script src="script.js"></script>
 </body>
 </html>
