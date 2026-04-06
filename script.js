@@ -28,16 +28,34 @@
     let eventsData = [
         {
             id: 1,
-            name: "Игра в креветку",
-            platform: "Дмитрий Морозов",
-            organizer: "Гербикс",
-            date: "05.04.26, 20:00",
+            name: "ПРИМЕР",
+            platform: "T1Ran",
+            organizer: "Нет",
+            date: "04.04.26, 15.19-16.30",
             status: "Проведен",
             rating: "10.000$",
             members: 10 ,
             callStatus: "✅ Одобрен",
             fullDetails: {
-                description: "",
+                description: "Не знаю че придумать",
+                tasks: "",
+                feedback: "",
+                rewards: "",
+                extra:""
+            }
+        },
+        {
+            id: 2,
+            name: "Прятки",
+            platform: "ratatu1cc",
+            organizer: "Нет",
+            date: "06.04.26, 15.21-15.30",
+            status: "Проведен",
+            rating: "45.000$",
+            members: 10 ,
+            callStatus: "✅ Одобрен",
+            fullDetails: {
+                description: "10 человек прячутся , мы их ищем и ебашим",
                 tasks: "",
                 feedback: "",
                 rewards: "",
