@@ -25,27 +25,12 @@
     }
 
     // ========== ДАННЫЕ ИВЕНТОВ ==========
+    // 🟡 Ожидает
+    // ✅ Одобрен
+
     let eventsData = [
         {
             id: 1,
-            name: "ПРИМЕР",
-            platform: "T1Ran",
-            organizer: "Нет",
-            date: "04.04.26, 15.19-16.30",
-            status: "Проведен",
-            rating: "10.000$",
-            members: 10 ,
-            callStatus: "✅ Одобрен",
-            fullDetails: {
-                description: "Не знаю че придумать",
-                tasks: "",
-                feedback: "",
-                rewards: "",
-                extra:""
-            }
-        },
-        {
-            id: 2,
             name: "Прятки",
             platform: "ratatu1cc",
             organizer: "Нет",
@@ -53,7 +38,7 @@
             status: "Проведен",
             rating: "45.000$",
             members: 10 ,
-            callStatus: "✅ Одобрен",
+            callStatus: "🟡 Ожидает",
             fullDetails: {
                 description: "10 человек прячутся , мы их ищем и ебашим",
                 tasks: "",
