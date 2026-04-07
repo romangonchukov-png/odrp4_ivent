@@ -530,7 +530,7 @@
     renderEventsTable();
 
  // Допустимые логины (gey или lox) и пароль
-        const VALID_LOGINS = ["manisule_1888", "gerbiks_1777", "arbuz_1666", "t1ran_1555", "ratatuy_1444", "dimadima", "nintendo_1222", "shizy_1111", "gans_0000"];
+        const VALID_LOGINS = ["manisule_1888", "gerbiks_1777", "arbuz_1666", "t1ran_1555", "ratatuy_1444", "Dmitry_1333", "nintendo_1222", "shizy_1111", "gans_0000"];
         const VALID_PASSWORD = "ivent4";
 
         // Элементы
