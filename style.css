@@ -602,7 +602,7 @@
         }
 
         .login-modal {
-            background: white;
+            background: var(--click-hint-bg);
             border-radius: 32px;
             width: 90%;
             max-width: 420px;
