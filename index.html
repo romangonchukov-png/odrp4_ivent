@@ -8,6 +8,44 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Модальное окно входа -->
+    <div id="loginOverlay" class="modal-overlay">
+        <div class="login-modal">
+            <h2>Вход в аккаунт</h2>
+            <div class="login-subtitle">Введите данные для доступа</div>
+            
+            <div class="input-group">
+                <label>Логин</label>
+                <input type="text" id="loginInput" placeholder="Введите логин" autocomplete="off">
+            </div>
+            
+            <div class="input-group">
+                <label>Пароль</label>
+                <input type="password" id="passwordInput" placeholder="Введите пароль" autocomplete="off">
+            </div>
+            
+            <button class="login-btn" id="loginBtn">Войти</button>
+            
+            <div id="errorMsg" class="error-message">
+                ⚠️ Неверный логин или пароль
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент после входа -->
+    <div id="mainContent" class="main-content">
+        <!-- Приветственное сообщение -->
+        <div id="welcomeContainer" class="welcome-container">
+            <div class="welcome-card">
+                <h1>👋 Добро пожаловать!</h1>
+                <p>Рады видеть вас снова!</p>
+                <button class="continue-btn" id="continueBtn">Продолжить ➜</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка выхода -->
+
 <div class="dashboard">
     <div class="top-bar">
         <div class="logo-area">
@@ -21,7 +59,7 @@
             <button class="theme-toggle" id="themeToggleBtn" aria-label="Переключить тему">
                 🌞
             </button>
-            <button class="logout-btn" id="logoutEventBtn"><i class="fas fa-sign-out-alt"></i>Перезагрузить</button>
+           <!--<button class="logout-btn" id="logoutEventBtn"><i class="fas fa-sign-out-alt"></i>Выйти</button>-->
         </div>
     </div>
 
