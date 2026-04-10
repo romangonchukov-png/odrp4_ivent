@@ -34,6 +34,120 @@
 
     let eventsData = [
         {
+            id: 10,
+            name: "Паркур",
+            platform: "T1Ran",
+            organizer: "Нет",
+            date: "10.04, 13:25 - 20.20 - 20.30",
+            status: "Проведен",
+            rating: "11.111$",
+            members: 13 ,
+            callStatus: "🟡Скоро",
+            
+            fullDetails: {
+                description: "Просто надо пройти паркур",
+                tasks: "",
+                feedback: "",
+                rewards: "",
+                extra:""
+            }
+        },
+        {
+            id: 9,
+            name: "Смертельные собаки",
+            platform: "T1Ran",
+            organizer: "Нет",
+            date: "10.04, 13:25 - 20.00 - 20.10",
+            status: "Проведен",
+            rating: "10.000$",
+            members: 10 ,
+            callStatus: "🟡Скоро",
+            
+            fullDetails: {
+                description: "Три собаки и игроки должны от них убегать кто выживет получит 10.000$",
+                tasks: "",
+                feedback: "",
+                rewards: "",
+                extra:""
+            }
+        },
+        {
+            id: 8,
+            name: "Правильный ответ...!",
+            platform: "T1Ran",
+            organizer: "Нет",
+            date: "10.04, 13:25 - 19.35 - 19.53",
+            status: "Проведен",
+            rating: "15.000$",
+            members: 13 ,
+            callStatus: "🟡Скоро",
+            
+            fullDetails: {
+                description: "Людям задают вопрос про сервер ОДРП и они должны отвечать правда или не правда",
+                tasks: "",
+                feedback: "",
+                rewards: "",
+                extra:""
+            }
+        },
+        {
+            id: 7,
+            name: "Выбери Цвет",
+            platform: "T1Ran",
+            organizer: "Нет",
+            date: "10.04, 13:25 - 18.45 - 18.55",
+            status: "Проведен",
+            rating: "10.000$",
+            members: 12 ,
+            callStatus: "🟡Скоро",
+            
+            fullDetails: {
+                description: "Есть 6 цветов, игроки должны встать на разные цвета (любые). После чего я закрываю забором и выбираю любого игрока. Он выбирает цвет. И эти цвета увеличиваются",
+                tasks: "",
+                feedback: "",
+                rewards: "",
+                extra:""
+            }
+        },
+        {
+            id: 6,
+            name: "Выбери Цвет",
+            platform: "T1Ran",
+            organizer: "Нет",
+            date: "10.04, 13:25 - 18.45 - 18.55",
+            status: "Проведен",
+            rating: "10.000$",
+            members: 12 ,
+            callStatus: "🟡Скоро",
+            
+            fullDetails: {
+                description: "Есть 6 цветов, игроки должны встать на разные цвета (любые). После чего я закрываю забором и выбираю любого игрока. Он выбирает цвет. И эти цвета увеличиваются",
+                tasks: "",
+                feedback: "",
+                rewards: "",
+                extra:""
+            }
+        },
+        {
+            id: 5,
+            name: "Музыкальные Стулья",
+            platform: "T1Ran",
+            organizer: "Нет",
+            date: "08.04, 13:25 - 21.20 - 21.35",
+            status: "Проведен",
+            rating: "20.000$",
+            members: 8 ,
+            callStatus: "🟡Скоро",
+            
+            fullDetails: {
+                description: "Крутится пока музыка, останавливается. Надо сесть",
+                tasks: "",
+                feedback: "",
+                rewards: "",
+                extra:""
+            }
+        },
+        {
             id: 4,
             name: "Выбери Цвет",
             platform: "T1Ran",
@@ -485,14 +599,14 @@
 
                         <!-- Карточка 2: Проведенно Ивентов -->
                         <div class="stat-card">
-                            <div class="stat-value" id="valueRecruited">4</div>
+                            <div class="stat-value" id="valueRecruited">10</div>
                             <div class="stat-label">Проведенно Ивентов</div>
                             <div class="stat-sub">успешно проведенные ивенты</div>
                         </div>
 
                         <!-- Карточка 3: Тикеты 7д (170) -->
                         <div class="stat-card">
-                            <div class="stat-value" id="valueTickets">23</div>
+                            <div class="stat-value" id="valueTickets">-</div>
                             <div class="stat-label">ТИКЕТЫ</div>
                             <div class="stat-sub">за последние 7 дней</div>
                         </div>
@@ -505,7 +619,7 @@
                         </div>
                         
                         <div class="stat-card">
-                            <div class="stat-value" id="valueOnline">98.000$</div>
+                            <div class="stat-value" id="valueOnline" style="color: #5fe147;">98.000$</div>
                             <div class="stat-label">ПРИЗОВЫЕ</div>
                             <div class="stat-sub">выданно валюты в неделю</div>
                         </div>
