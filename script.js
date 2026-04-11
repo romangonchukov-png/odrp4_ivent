@@ -27,13 +27,11 @@
         { id: 9, name: "yaroslav1432", role: "Ивентер", discord: "1286725096278331565", status: "Онлайн", eventsCount: "-", joinDate: "10.04.26", rating: "Администратор", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до  завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199775920153", achievements: "0", notes: "" } }
     ];
 
-     // ЗАГРУЗКА СОХРАНЁННЫХ СТАТУСОВ ИЗ LOCALSTORAGE
-     // ФУНКЦИЯ ПОДСЧЁТА СУММЫ ПРИЗОВЫХ
+      // ФУНКЦИЯ ПОДСЧЁТА СУММЫ ПРИЗОВЫХ
     function calculateTotalPrizes() {
         let total = 0;
         for (let event of eventsData) {
             let ratingStr = String(event.rating);
-            // Убираем знак доллара и пробелы, оставляем только цифры и точку
             let match = ratingStr.match(/(\d+(?:[.,]\d+)?)/);
             if (match) {
                 let num = parseFloat(match[1].replace(',', '.'));
@@ -50,7 +48,6 @@
         const totalPrizes = calculateTotalPrizes();
         const normContainer = document.getElementById('normStatsContainer');
         if (normContainer) {
-            // Обновляем карточку с призовыми
             const prizeCard = normContainer.querySelector('.stat-card:last-child .stat-value');
             if (prizeCard) {
                 prizeCard.innerHTML = totalPrizes.toLocaleString('ru-RU') + '$';
@@ -59,12 +56,30 @@
         }
     }
 
-    // ЗАГРУЗКА СОХРАНЁННЫХ СТАТУСОВ ИЗ LOCALSTORAGE
-    function loadSavedStatuses() {
-        const saved = localStorage.getItem('unionEventsStatuses');
-        if (saved) {
+    // ===== СОХРАНЕНИЕ ВСЕХ ДАННЫХ (СТАТУСЫ И ПРИЗОВЫЕ) В LOCALSTORAGE =====
+    function saveAllData() {
+        // Сохраняем статусы ивентов
+        const statusMap = {};
+        for (let event of eventsData) {
+            statusMap[event.id] = event.callStatus;
+        }
+        localStorage.setItem('unionEventsStatuses', JSON.stringify(statusMap));
+        
+        // Сохраняем призовые
+        const prizesMap = {};
+        for (let event of eventsData) {
+            prizesMap[event.id] = event.rating;
+        }
+        localStorage.setItem('unionEventsPrizes', JSON.stringify(prizesMap));
+    }
+
+    // ЗАГРУЗКА ДАННЫХ ИЗ LOCALSTORAGE
+    function loadAllData() {
+        // Загружаем статусы
+        const savedStatuses = localStorage.getItem('unionEventsStatuses');
+        if (savedStatuses) {
             try {
-                const statusMap = JSON.parse(saved);
+                const statusMap = JSON.parse(savedStatuses);
                 for (let event of eventsData) {
                     if (statusMap[event.id]) {
                         event.callStatus = statusMap[event.id];
@@ -72,17 +87,20 @@
                 }
             } catch(e) {}
         }
-    }
-
-    // СОХРАНЕНИЕ СТАТУСОВ В LOCALSTORAGE
-    function saveStatuses() {
-        const statusMap = {};
-        for (let event of eventsData) {
-            statusMap[event.id] = event.callStatus;
+        
+        // Загружаем призовые
+        const savedPrizes = localStorage.getItem('unionEventsPrizes');
+        if (savedPrizes) {
+            try {
+                const prizesMap = JSON.parse(savedPrizes);
+                for (let event of eventsData) {
+                    if (prizesMap[event.id]) {
+                        event.rating = prizesMap[event.id];
+                    }
+                }
+            } catch(e) {}
         }
-        localStorage.setItem('unionEventsStatuses', JSON.stringify(statusMap));
     }
-
 
     // ========== ЛОГИНЫ И ПРАВА ==========
     const EDITORS = ["manisule_1888", "gerbiks_1777", "arbuz_1666", "t1ran_1555"];
@@ -90,27 +108,14 @@
     const PASSWORD = "ivent4";
     let currentUser = null;
 
-     function changeEventStatus(eventId, newStatus) {
+     
+    function changeEventStatus(eventId, newStatus) {
         if (!EDITORS.includes(currentUser)) return false;
         const event = eventsData.find(e => e.id === eventId);
         if (event) {
             event.callStatus = newStatus;
-            saveStatuses(); // СОХРАНЯЕМ ПОСЛЕ ИЗМЕНЕНИЯ
+            saveAllData(); // СОХРАНЯЕМ ВСЕ ДАННЫЕ
             renderEventsTable();
-            showNotif(`✅ Статус изменён на "${newStatus}"`);
-            return true;
-        }
-        return false;
-    }
-
-     function changeEventStatus(eventId, newStatus) {
-        if (!EDITORS.includes(currentUser)) return false;
-        const event = eventsData.find(e => e.id === eventId);
-        if (event) {
-            event.callStatus = newStatus;
-            saveStatuses();
-            renderEventsTable();
-            // Обновляем статистику в норме, если она открыта
             updateNormStats();
             showNotif(`✅ Статус изменён на "${newStatus}"`);
             return true;
@@ -159,7 +164,7 @@
                 cell.innerHTML = `
                     <button class="status-change-btn btn-approved" data-id="${event.id}" data-status="✅Одобрен">✅ Одобрен</button>
                     <button class="status-change-btn btn-soon" data-id="${event.id}" data-status="🟡Скоро">🟡 Скоро</button>
-                    <button class="status-change-btn btn-completed" data-id="${event.id}" data-status="✅Проведен">✅ Проведен</button>
+                    <button class="status-change-btn btn-completed" data-id="${event.id}" data-status="🔴Отказано">🔴 Отказано</button>
                 `;
             }
         });
@@ -255,7 +260,7 @@
     document.getElementById('themeToggleBtn')?.addEventListener('click', toggleTheme);
     initTheme();
 
-    // НАВИГАЦИЯ (ТВОЯ МЕТОДИЧКА - НЕТРОНУТАЯ, НО С ОБНОВЛЯЕМОЙ СУММОЙ)
+    // НАВИГАЦИЯ
     const navs = document.querySelectorAll('.nav-item');
     navs.forEach(n => {
         n.addEventListener('click', () => {
@@ -389,6 +394,6 @@
     document.getElementById('closeModalBtn')?.addEventListener('click', () => modal.style.display = 'none');
     window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
 
-    // ЗАГРУЖАЕМ СОХРАНЁННЫЕ СТАТУСЫ ПЕРЕД СТАРТОМ
-    loadSavedStatuses();
+    // ЗАГРУЖАЕМ СОХРАНЁННЫЕ ДАННЫЕ ПЕРЕД СТАРТОМ
+    loadAllData();
     checkAuth();
