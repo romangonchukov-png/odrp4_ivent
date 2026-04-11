@@ -26,17 +26,43 @@
         { id: 8, name: "Himas", role: "Ивентер", discord: "1467081827670954015", status: "Онлайн", eventsCount: "-", joinDate: "10.04.26", rating: "Оператор", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до  завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199683531094", achievements: "0", notes: "" } }
     ];
 
+     // ЗАГРУЗКА СОХРАНЁННЫХ СТАТУСОВ ИЗ LOCALSTORAGE
+    function loadSavedStatuses() {
+        const saved = localStorage.getItem('unionEventsStatuses');
+        if (saved) {
+            try {
+                const statusMap = JSON.parse(saved);
+                for (let event of eventsData) {
+                    if (statusMap[event.id]) {
+                        event.callStatus = statusMap[event.id];
+                    }
+                }
+            } catch(e) {}
+        }
+    }
+
+    // СОХРАНЕНИЕ СТАТУСОВ В LOCALSTORAGE
+    function saveStatuses() {
+        const statusMap = {};
+        for (let event of eventsData) {
+            statusMap[event.id] = event.callStatus;
+        }
+        localStorage.setItem('unionEventsStatuses', JSON.stringify(statusMap));
+    }
+
+
     // ========== ЛОГИНЫ И ПРАВА ==========
     const EDITORS = ["manisule_1888", "gerbiks_1777", "arbuz_1666", "t1ran_1555"];
     const VALID_LOGINS = [...EDITORS,"dmitry_1333", "nintendo_1222", "gans_0000", "r", "himos_1111", "gofi_2222"];
     const PASSWORD = "ivent4";
     let currentUser = null;
 
-    function changeEventStatus(eventId, newStatus) {
+     function changeEventStatus(eventId, newStatus) {
         if (!EDITORS.includes(currentUser)) return false;
         const event = eventsData.find(e => e.id === eventId);
         if (event) {
             event.callStatus = newStatus;
+            saveStatuses(); // СОХРАНЯЕМ ПОСЛЕ ИЗМЕНЕНИЯ
             renderEventsTable();
             showNotif(`✅ Статус изменён на "${newStatus}"`);
             return true;
@@ -57,7 +83,7 @@
         const canEdit = EDITORS.includes(currentUser);
         container.innerHTML = `
             <div class="page-header"><h2>📅 Таблица мероприятий</h2></div>
-            <div class="click-hint">🔽 ${canEdit ? 'У вас есть права изменять статус "Одобрен" ➜ "Скоро" или "Проведен"' : 'Таблица нашего соства'}</div>
+            <div class="click-hint">🔽 ${canEdit ? 'У вас есть права изменять статус "Одобрен" ➜ "Скоро" или "Проведен"' : 'Режим просмотра (изменять статус могут: manisule_1888, gerbiks_1777, arbuz_1666)'}</div>
             <div class="table-wrapper">
                 <table class="data-table">
                     <thead><tr><th>ИВЕНТ</th><th>ОРГАНИЗАТОР</th><th>ПОМОЩНИКИ</th><th>ДАТА</th><th>СТАТУС</th><th>ПРИЗОВЫЕ</th><th>УЧАСТНИКИ</th><th>ОДОБРЕН</th>${canEdit ? '<th>ДЕЙСТВИЯ</th>' : ''}</tr></thead>
@@ -84,7 +110,8 @@
                 const cell = row.insertCell(8);
                 cell.innerHTML = `
                     <button class="status-change-btn btn-approved" data-id="${event.id}" data-status="✅Одобрен">✅ Одобрен</button>
-                    <button style="padding: 4px; margin: 6px;" class="status-change-btn btn-soon" data-id="${event.id}" data-status="🔴Отказ">🔴 Отказ</button>
+                    <button class="status-change-btn btn-soon" data-id="${event.id}" data-status="🟡Скоро">🟡 Скоро</button>
+                    <button class="status-change-btn btn-completed" data-id="${event.id}" data-status="🔴Отказ">🔴 Отказ</button>
                 `;
             }
         });
@@ -313,4 +340,6 @@
     document.getElementById('closeModalBtn')?.addEventListener('click', () => modal.style.display = 'none');
     window.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
 
+    // ЗАГРУЖАЕМ СОХРАНЁННЫЕ СТАТУСЫ ПЕРЕД СТАРТОМ
+    loadSavedStatuses();
     checkAuth();
