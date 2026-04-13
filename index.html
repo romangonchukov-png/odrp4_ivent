@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Модальное окно входа -->
-    <div id="loginOverlay" class="modal-overlay">
+<div id="loginOverlay" class="modal-overlay">
     <div class="login-modal">
         <h2>Вход в аккаунт</h2>
         <div class="login-subtitle">Введите данные для доступа</div>
@@ -43,20 +42,22 @@
 
     <div class="main-layout">
         <div class="sidebar">
-            <div class="nav-section">
-                <div class="nav-title">ГЛАВНОЕ</div>
-                <div class="nav-item active" data-tab="events_table">📋 <span>Таблица ивентов</span></div>
-                <div class="nav-item" data-tab="team_table">👥 <span>Команда ивента</span></div>
-                <div class="nav-item" data-tab="event_guidee">📊 <span>Норма</span></div>
-            </div>
-            <div class="nav-section">
-                <div class="nav-title">Информация</div>
-                <div class="nav-item" data-tab="event_guide">📖 <span>Методичка</span></div>
-            </div>
-        </div>
+    <div class="nav-section">
+        <div class="nav-title">ГЛАВНОЕ</div>
+        <div class="nav-item active" data-tab="events_table">📋 <span>Таблица ивентов</span></div>
+        <div class="nav-item" data-tab="team_table">👥 <span>Команда ивента</span></div>
+        <div class="nav-item" data-tab="add_event">➕ <span>Добавить ивент</span></div>
+    </div>
+    <div class="nav-section">
+        <div class="nav-title">ИНФОРМАЦИЯ</div>
+        <div class="nav-item" data-tab="event_guidee">📊 <span>Норма</span></div>
+        <div class="nav-item" data-tab="event_guide">📖 <span>Методичка</span></div>
+        <div class="nav-item" data-tab="event_adons">📤 <span>Адонны</span></div>
+    </div>
+</div>
         <div class="content-area" id="eventDynamicContent"></div>
     </div>
-    <footer>UnionTeam · Ивент-отдел #4 — Полезная информация про ивент отдел 4 сервера Обычного Дарк РП.</footer>
+    <footer>UnionTeam · Ивент-отдел #4 — Полезная информация про ивент отдел 4 сервера Обычного Дарк РП</footer>
 </div>
 
 <div id="infoModal" class="modal">
@@ -65,7 +66,6 @@
         <div class="modal-body" id="modalBody"></div>
     </div>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
