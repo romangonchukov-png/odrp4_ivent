@@ -86,8 +86,8 @@ const VALID_LOGINS = [
     "T1Ran",
     "manisule",
     "Гербикс",
-    "Arbuz_madrazo",
-    "Дмитрий_Морозов",
+    "Arbuz madrazo",
+    "Дмитрий Морозов",
     "Гофикал",
     "Himas",
     "Yaroslav1432"
