@@ -32,6 +32,7 @@ body {
 }
 
 .dashboard {
+    opacity: 0.95;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(2px);
     border-radius: 32px;
@@ -1194,4 +1195,306 @@ body {
 body.dark .addon-card {
     background: var(--card-bg);
     border-color: var(--card-border);
+}
+
+/* Галерея фотографий */
+.gallery-container {
+    margin-top: 15px;
+    background: var(--badge-bg);
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.gallery-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 2px solid var(--modal-border);
+}
+
+.gallery-image:hover {
+    transform: scale(1.02);
+}
+
+.gallery-nav {
+    background: var(--modal-bg);
+    border: 1px solid var(--modal-border);
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-nav:hover {
+    background: var(--modal-border);
+    transform: scale(1.05);
+}
+
+.gallery-counter {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+/* Модальное окно для просмотра фото в полный размер */
+.fullscreen-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.fullscreen-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 16px;
+}
+
+.fullscreen-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-weight: bold;
+}
+
+/* ========== КОМАНДА ========== */
+.team-section {
+    margin-bottom: 2rem;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+}
+
+.section-header.senior {
+    background: linear-gradient(135deg, rgba(255, 170, 68, 0.15), rgba(255, 170, 68, 0.05));
+    border-left: 3px solid #ffaa44;
+}
+
+.section-header.junior {
+    background: linear-gradient(135deg, rgba(68, 255, 170, 0.15), rgba(68, 255, 170, 0.05));
+    border-left: 3px solid #44ffaa;
+}
+
+.section-icon {
+    font-size: 1.6rem;
+}
+
+.section-title.senior {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffaa44;
+}
+
+.section-title.junior {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #44ffaa;
+}
+
+.section-count {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.2rem 0.8rem;
+    border-radius: 40px;
+    font-size: 0.75rem;
+    margin-left: auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.team-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.team-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+/* КОРОНА В ПРАВОМ ВЕРХНЕМ УГЛУ */
+.team-card::before {
+    content: "👑";
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 1.4rem;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+/* Для младшего состава — звезда вместо короны */
+.team-card.junior::before {
+    content: "🌟";
+}
+
+/* Верхняя часть */
+.team-card-header {
+    padding: 0.8rem 1rem 0.5rem 1rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.team-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+    display: block;
+}
+
+.team-role {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+/* Тело карточки */
+.team-card-body {
+    padding: 0.7rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.team-info-item {
+    flex: 1;
+    min-width: 80px;
+}
+
+.team-info-label {
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.1rem;
+}
+
+.team-info-value {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    word-break: break-all;
+    line-height: 1.2;
+}
+
+/* Нижняя часть со звездами рейтинга */
+.team-card-footer {
+    padding: 0.4rem 1rem;
+    background: var(--badge-bg);
+    border-top: 1px solid var(--card-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-badge {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 40px;
+}
+
+.senior-badge {
+    background: #ffaa44;
+    color: #1a1a2e;
+}
+
+.junior-badge {
+    background: #44ffaa;
+    color: #1a1a2e;
+}
+
+/* ЗВЕЗДЫ РЕЙТИНГА */
+.team-rating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.rating-star {
+    color: #ffbc6e;
+    font-size: 0.7rem;
+}
+
+.rating-star.empty {
+    color: var(--text-muted);
+    opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .team-card-header {
+        padding: 0.6rem 0.8rem 0.4rem 0.8rem;
+    }
+    
+    .team-name {
+        font-size: 1rem;
+    }
+    
+    .team-card-body {
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .team-info-value {
+        font-size: 0.7rem;
+    }
 }
