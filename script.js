@@ -702,17 +702,29 @@ loadAllData();
 checkAuth();
 
 
-// Движущийся фон за мышкой
+// Плавный движущийся фон за мышкой
 const bg = document.getElementById('moving-bg');
 if (bg) {
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    
+    function animateBg() {
+        currentX += (targetX - currentX) * 0.1;
+        currentY += (targetY - currentY) * 0.1;
+        bg.style.transform = `translate(${currentX}px, ${currentY}px)`;
+        requestAnimationFrame(animateBg);
+    }
+    
     document.addEventListener('mousemove', (e) => {
         const mouseX = e.clientX / window.innerWidth;
         const mouseY = e.clientY / window.innerHeight;
         
-        const moveX = (mouseX - 0.5) * 20;
-        const moveY = (mouseY - 0.5) * 20;
-        
-        bg.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        targetX = (mouseX - 0.5) * 30;
+        targetY = (mouseY - 0.5) * 30;
     });
+    
+    animateBg();
 }
 
