@@ -1,4 +1,42 @@
 /* ВСЕ ТВОИ СТИЛИ - НИЧЕГО НЕ МЕНЯЛ */
+/* Движущийся фон за мышкой */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+#moving-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    background-image: url('https://i.ytimg.com/vi/k_bnSrMI-d4/maxresdefault.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    transition: transform 0.1s ease-out;
+}
+
+.dashboard, .welcome-container, .modal-overlay {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+.welcome-container {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-overlay {
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.dashboard {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    border-radius: 32px;
+}
         * {
             margin: 0;
             padding: 0;
