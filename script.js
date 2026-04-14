@@ -700,3 +700,19 @@ window.addEventListener('click', e => { if (e.target === modal) modal.style.disp
 
 loadAllData();
 checkAuth();
+
+
+// Движущийся фон за мышкой
+const bg = document.getElementById('moving-bg');
+if (bg) {
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+        
+        const moveX = (mouseX - 0.5) * 20;
+        const moveY = (mouseY - 0.5) * 20;
+        
+        bg.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+}
+
