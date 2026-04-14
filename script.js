@@ -2,7 +2,8 @@
 let eventsData = [
     { id: 1, name: "Пол это лава", platform: "T1Ran", organizer: "Нет", date: "13.04.26, 18.30 - 18.45", status: "Проведен", rating: "10.000$", members: 10, callStatus: "🟡Скоро", fullDetails: { description: "Игроки дерутся на кулаках 1 на 1,есть финал,полуфинал", tasks: "", feedback: "", rewards: "", extra: "" } },
     { id: 2, name: "Паркур", platform: "somcop", organizer: "Нет", date: "14.04.26, 19.15 - 19:25", status: "Проведен", rating: "10.000$", members: 9, callStatus: "🟡Скоро", fullDetails: { description: "паркур средней сложности и длины,дается неограниченное количество попыток для прохождения", tasks: "", feedback: "", rewards: "", extra: "" } },
-    { id: 3, name: "Ринг", platform: "somcop", organizer: "Нет", date: "14.04.26, 19:35 - 19:50", status: "Проведен", rating: "15.000$", members: 9, callStatus: "🟡Скоро", fullDetails: { description: "паркур средней сложности и длины,дается неограниченное количество попыток для прохождения", tasks: "", feedback: "", rewards: "", extra: "" } }
+    { id: 3, name: "Ринг", platform: "somcop", organizer: "Нет", date: "14.04.26, 19:35 - 19:50", status: "Проведен", rating: "15.000$", members: 9, callStatus: "🟡Скоро", fullDetails: { description: "паркур средней сложности и длины,дается неограниченное количество попыток для прохождения", tasks: "", feedback: "", rewards: "", extra: "" } },
+    { id: 4, name: "Паркур на дубе", platform: "somcop", organizer: "Нет", date: "14.04.26, 21:05 - 21:18", status: "Проведен", rating: "1.000$", members: 6, callStatus: "🟡Скоро", fullDetails: { description: "Большой паркур на пне дуба", tasks: "", feedback: "", rewards: "", extra: "" } }
 ];
 
 let teamData = [
