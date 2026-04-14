@@ -83,6 +83,8 @@ function loadAllData() {
 
 // ========== НОВАЯ СИСТЕМА ЛОГИНОВ И ПАРОЛЕЙ (С ЗАГЛАВНЫМИ БУКВАМИ) ==========
 const VALID_LOGINS = [
+    "Foxy",
+    "somcop",
     "T1Ran",
     "manisule",
     "Гербикс",
