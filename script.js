@@ -4,16 +4,19 @@ let eventsData = [
 ];
 
 let teamData = [
-    { id: 1, name: "manisule", role: "Глава ивент-отдела", discord: "565584233981280270", status: "Онлайн", eventsCount: "Нет нормы", joinDate: "21.01.26", rating: "Судо-Куратор", fullDetails: { responsibilities: "Имеет полное владение над отделом Ивентологии, может самостоятельно изменять состав отдела Ивентологии и их норму/правила.", contacts: "https://admin.unionteams.ru/4/admin/76561198386405573", achievements: "0", notes: "" } },
-    { id: 2, name: "Гербикс", role: "Зам.Главы ивент-отдела", discord: "694286975158583317", status: "Онлайн", eventsCount: "Нет нормы", joinDate: "21.01.26", rating: "Ассистент", fullDetails: { responsibilities: "Имеет все полномочия нижестоящих рангов, а также имеет право набирать новых кадров в отдел, определять курс развития отдела и изменять норму и правила с разрешения/уведомления об этом Главы Ивентологии.", contacts: "https://admin.unionteams.ru/4/admin/76561199196300974", achievements: "0", notes: "" } },
-    { id: 3, name: "Arbuz Madrazo", role: "Ст.Ивентер", discord: "1066705962972495922", status: "Онлайн", eventsCount: "Нет нормы", joinDate: "07.02.26", rating: "Ст.Администратор", fullDetails: { responsibilities: "Имеет все полномочия Ивентера, а также имеет право корректировать работу Ивентеров и давать рекомендации по поводу ивентов, выдавать наказания за их ошибки, а также одобрять отчётности.", contacts: "https://admin.unionteams.ru/4/admin/76561199236074729", achievements: "1", notes: "" } },
-    { id: 4, name: "T1Ran", role: "Ивентер", discord: "1246076621484724320", status: "Онлайн", eventsCount: "-", joinDate: "14.03.26", rating: "Оператор", fullDetails: { responsibilities: "Отвечает за таблицу ТАКЖЕ: Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199705616791", achievements: "11", notes: "" } },
-    { id: 5, name: "Дмитрий Морозов", role: "Ивентер", discord: "859747626115006474", status: "Онлайн", eventsCount: "-", joinDate: "30.03.26", rating: "Оператор", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199403370553", achievements: "11", notes: "" } },
-    { id: 6, name: "Гофикал", role: "Ивентер", discord: "1135087142385754123", status: "Онлайн", eventsCount: "-", joinDate: "09.04.26", rating: "Модератор", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199636555608", achievements: "0", notes: "" } },
-    { id: 7, name: "Himas", role: "Ивентер", discord: "1467081827670954015", status: "Онлайн", eventsCount: "-", joinDate: "10.04.26", rating: "Оператор", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199683531094", achievements: "0", notes: "" } },
-    { id: 8, name: "yaroslav1432", role: "Ивентер", discord: "1286725096278331565", status: "Онлайн", eventsCount: "-", joinDate: "10.04.26", rating: "Администратор", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199775920153", achievements: "0", notes: "" } },
-    { id: 9, name: "Foxy", role: "Ивентер", discord: "1344959502436532304", status: "Онлайн", eventsCount: "-", joinDate: "10.04.26", rating: "Модератор", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199775920153", achievements: "0", notes: "" } },
-    { id: 10, name: "somcop", role: "Ивентер", discord: "989919183036874772", status: "Онлайн", eventsCount: "0", joinDate: "13.04.26", rating: "Модератор", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199768219919", achievements: "0", notes: "" } }
+    // ========== СТАРШИЙ СОСТАВ ==========
+    { id: 1, name: "manisule", role: "Глава ивент-отдела", discord: "565584233981280270", status: "Онлайн", eventsCount: "Нет нормы", joinDate: "21.01.26", rating: "Судо-Куратор", category: "Старший состав", fullDetails: { responsibilities: "Имеет полное владение над отделом Ивентологии, может самостоятельно изменять состав отдела Ивентологии и их норму/правила.", contacts: "https://admin.unionteams.ru/4/admin/76561198386405573", achievements: "0", notes: "" } },
+    { id: 2, name: "Гербикс", role: "Зам.Главы ивент-отдела", discord: "694286975158583317", status: "Онлайн", eventsCount: "Нет нормы", joinDate: "21.01.26", rating: "Ассистент", category: "Старший состав", fullDetails: { responsibilities: "Имеет все полномочия нижестоящих рангов, а также имеет право набирать новых кадров в отдел, определять курс развития отдела и изменять норму и правила с разрешения/уведомления об этом Главы Ивентологии.", contacts: "https://admin.unionteams.ru/4/admin/76561199196300974", achievements: "0", notes: "" } },
+    { id: 3, name: "Arbuz Madrazo", role: "Ст.Ивентер", discord: "1066705962972495922", status: "Онлайн", eventsCount: "Нет нормы", joinDate: "07.02.26", rating: "Ст.Администратор", category: "Старший состав", fullDetails: { responsibilities: "Имеет все полномочия Ивентера, а также имеет право корректировать работу Ивентеров и давать рекомендации по поводу ивентов, выдавать наказания за их ошибки, а также одобрять отчётности.", contacts: "https://admin.unionteams.ru/4/admin/76561199236074729", achievements: "1", notes: "" } },
+    
+    // ========== МЛАДШИЙ СОСТАВ ==========
+    { id: 4, name: "T1Ran", role: "Ивентер", discord: "1246076621484724320", status: "Онлайн", eventsCount: "-", joinDate: "14.03.26", rating: "Оператор", category: "Младший состав", fullDetails: { responsibilities: "Отвечает за таблицу ТАКЖЕ: Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199705616791", achievements: "11", notes: "" } },
+    { id: 5, name: "Дмитрий Морозов", role: "Ивентер", discord: "859747626115006474", status: "Онлайн", eventsCount: "-", joinDate: "30.03.26", rating: "Оператор", category: "Младший состав", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199403370553", achievements: "11", notes: "" } },
+    { id: 6, name: "Гофикал", role: "Ивентер", discord: "1135087142385754123", status: "Онлайн", eventsCount: "-", joinDate: "09.04.26", rating: "Модератор", category: "Младший состав", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199636555608", achievements: "0", notes: "" } },
+    { id: 7, name: "Himas", role: "Ивентер", discord: "1467081827670954015", status: "Онлайн", eventsCount: "-", joinDate: "10.04.26", rating: "Оператор", category: "Младший состав", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199683531094", achievements: "0", notes: "" } },
+    { id: 8, name: "yaroslav1432", role: "Ивентер", discord: "1286725096278331565", status: "Онлайн", eventsCount: "-", joinDate: "10.04.26", rating: "Администратор", category: "Младший состав", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199775920153", achievements: "0", notes: "" } },
+    { id: 9, name: "Foxy", role: "Ивентер", discord: "1344959502436532304", status: "Онлайн", eventsCount: "-", joinDate: "10.04.26", rating: "Модератор", category: "Младший состав", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199775920153", achievements: "0", notes: "" } },
+    { id: 10, name: "somcop", role: "Ивентер", discord: "76561199768219919", status: "Онлайн", eventsCount: "0", joinDate: "13.04.26", rating: "Модератор", category: "Младший состав", fullDetails: { responsibilities: "Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела и брать во внимание всю обоснованную критику с их стороны. Может игнорировать завал в случае, если ивент начался до завала, но обязуется брать участие в его разборе, если идёт подготовка к ивенту.", contacts: "https://admin.unionteams.ru/4/admin/76561199768219919", achievements: "0", notes: "" } }
 ];
 
 // Функция подсчёта ивентов по организатору
@@ -193,39 +196,118 @@ function renderTeamTable() {
     const container = document.getElementById('eventDynamicContent');
     const eventCounts = countEventsByPlatform();
     
+    const seniorMembers = teamData.filter(m => m.category === "Старший состав");
+    const juniorMembers = teamData.filter(m => m.category === "Младший состав");
+    
+    function renderMemberCard(m, type) {
+        const eventsCount = getEventsCountForMember(m, eventCounts);
+        const cardClass = type === 'senior' ? 'senior' : 'junior';
+        
+        // Рейтинг звездами
+        const ratingValue = parseFloat(m.rating);
+        let starsHtml = '';
+        if (!isNaN(ratingValue)) {
+            const fullStars = Math.floor(ratingValue);
+            const hasHalf = ratingValue % 1 >= 0.5;
+            for(let i = 0; i < fullStars; i++) starsHtml += '<span class="rating-star">★</span>';
+            if(hasHalf) starsHtml += '<span class="rating-star">½</span>';
+            const empty = 5 - fullStars - (hasHalf ? 1 : 0);
+            for(let i = 0; i < empty; i++) starsHtml += '<span class="rating-star empty">☆</span>';
+        } else {
+            starsHtml = `<span class="rating-star">${m.rating}</span>`;
+        }
+        
+        return `
+            <div class="team-card ${cardClass} clickable-card" data-type="team" data-id="${m.id}">
+                <div class="team-card-header">
+                    <div>
+                        <div class="team-name">${escapeHtml(m.name)}</div>
+                        <div class="team-role">${escapeHtml(m.role)}</div>
+                    </div>
+                </div>
+                <div class="team-card-body">
+                    <div class="team-info-item">
+                        <div class="team-info-label">DISCORD</div>
+                        <div class="team-info-value">${m.discord}</div>
+                    </div>
+                    <div class="team-info-item">
+                        <div class="team-info-label">ИВЕНТОВ</div>
+                        <div class="team-info-value">${eventsCount}</div>
+                    </div>
+                    <div class="team-info-item">
+                        <div class="team-info-label">ВСТУПИЛ</div>
+                        <div class="team-info-value">${m.joinDate}</div>
+                    </div>
+                </div>
+                <div class="team-card-footer">
+                    <span class="team-badge ${type === 'senior' ? 'senior-badge' : 'junior-badge'}">
+                        ${type === 'senior' ? '👑' : '🌟'} ${type === 'senior' ? 'Старший' : 'Младший'} состав
+                    </span>
+                    <div class="team-rating">
+                        ${starsHtml}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    let seniorHtml = '';
+    let juniorHtml = '';
+    
+    seniorMembers.forEach(m => { seniorHtml += renderMemberCard(m, 'senior'); });
+    juniorMembers.forEach(m => { juniorHtml += renderMemberCard(m, 'junior'); });
+    
     container.innerHTML = `
         <div class="page-header"><h2>👥 Команда ивент-отдела</h2></div>
-        <div class="click-hint">🔽 Нажмите на строку участника — полная информация</div>
-        <div class="table-wrapper">
-            <table class="data-table">
-                <thead><tr><th>Никнейм</th><th>РОЛЬ</th><th>DISCORD</th><th>СТАТУС</th><th>ИВЕНТОВ</th><th>ДАТА ВСТУПЛЕНИЯ</th><th>Должность</th></tr></thead>
-                <tbody id="teamTableBody"></tbody>
-            </table>
+        <div class="click-hint">🔽 Нажмите на карточку участника — полная информация</div>
+        
+        <div class="team-section">
+            <div class="section-header senior">
+                <span class="section-icon">👑</span>
+                <span class="section-title senior">Старший состав</span>
+                <span class="section-count">${seniorMembers.length} чел</span>
+            </div>
+            <div class="team-grid">${seniorHtml || '<div style="text-align:center; padding:2rem;">Нет участников</div>'}</div>
+        </div>
+        
+        <div class="team-section">
+            <div class="section-header junior">
+                <span class="section-icon">🌟</span>
+                <span class="section-title junior">Младший состав</span>
+                <span class="section-count">${juniorMembers.length} чел</span>
+            </div>
+            <div class="team-grid">${juniorHtml || '<div style="text-align:center; padding:2rem;">Нет участников</div>'}</div>
         </div>
     `;
-    const tbody = document.getElementById('teamTableBody');
-    tbody.innerHTML = '';
-    teamData.forEach(m => {
-        const row = tbody.insertRow();
-        row.classList.add('clickable-row');
-        row.setAttribute('data-type', 'team');
-        row.setAttribute('data-id', m.id);
-        row.insertCell(0).innerHTML = `<strong>${escapeHtml(m.name)}</strong>`;
-        row.insertCell(1).innerHTML = `<span class="role-badge">${escapeHtml(m.role)}</span>`;
-        row.insertCell(2).textContent = m.discord;
-        row.insertCell(3).innerHTML = `<span class="status-badge status-online">🟢 ${m.status}</span>`;
-        
-        let eventsCount = eventCounts[m.name] || 0;
-        if (m.eventsCount !== "-" && m.eventsCount !== "Нет нормы" && m.eventsCount !== "Отпуск" && !isNaN(parseInt(m.eventsCount))) {
-            eventsCount = m.eventsCount;
-        } else if (m.eventsCount === "Нет нормы" || m.eventsCount === "Отпуск") {
-            eventsCount = m.eventsCount;
-        }
-        row.insertCell(4).innerHTML = `<span style="font-weight:600;">${eventsCount}</span>`;
-        row.insertCell(5).textContent = m.joinDate;
-        row.insertCell(6).innerHTML = `<span class="rating-star">⭐ ${m.rating}</span>`;
+    
+    document.querySelectorAll('.clickable-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const id = parseInt(card.dataset.id);
+            const member = teamData.find(m => m.id === id);
+            if (member) openTeamModal(member);
+        });
     });
-    attachRowClicks();
+}
+
+function getEventsCountForMember(m, eventCounts) {
+    let eventsCount = eventCounts[m.name] || 0;
+    if (m.eventsCount !== "-" && m.eventsCount !== "Нет нормы" && m.eventsCount !== "Отпуск" && !isNaN(parseInt(m.eventsCount))) {
+        eventsCount = m.eventsCount;
+    } else if (m.eventsCount === "Нет нормы" || m.eventsCount === "Отпуск") {
+        eventsCount = m.eventsCount;
+    }
+    return eventsCount;
+}
+
+// Вспомогательная функция для подсчёта ивентов участника
+function getEventsCountForMember(m, eventCounts) {
+    let eventsCount = eventCounts[m.name] || 0;
+    if (m.eventsCount !== "-" && m.eventsCount !== "Нет нормы" && m.eventsCount !== "Отпуск" && !isNaN(parseInt(m.eventsCount))) {
+        eventsCount = m.eventsCount;
+    } else if (m.eventsCount === "Нет нормы" || m.eventsCount === "Отпуск") {
+        eventsCount = m.eventsCount;
+    }
+    return eventsCount;
 }
 
 function attachRowClicks() {
