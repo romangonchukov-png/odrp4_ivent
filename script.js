@@ -6,7 +6,10 @@ let eventsData = [
     { id: 4, name: "Паркур на дубе", platform: "somcop", organizer: "Нет", date: "14.04.26, 21:05 - 21:18", status: "Проведен", rating: "1.000$", members: 6, callStatus: "🟡Скоро", fullDetails: { description: "Большой паркур на пне дуба", tasks: "", feedback: "", rewards: "", extra: "" } },
     { id: 5, name: "Лабиринт", platform: "Гофикал", organizer: "Нет", date: "14.04.26, 17.00 - 17.10", status: "Проведен", rating: "10.000$", members: 6, callStatus: "🟡Скоро", fullDetails: { description: "Просто большой лабиринт", tasks: "", feedback: "", rewards: "", extra: "" } },
     { id: 6, name: "Бункер", platform: "Гофикал", organizer: "Нет", date: "14.04.26, 18.30 - 19.00", status: "Проведен", rating: "-", members: 10, callStatus: "🟡Скоро", fullDetails: { description: "Игрокам выдали карты с их кратким описанием (возраст профессия и т.д) задача игроков была попасть в бункер", tasks: "", feedback: "", rewards: "", extra: "" } },
-    { id: 7, name: "Слепой убийца", platform: "somcop", organizer: "Нет", date: "15.04.26, 19:15-19:38", status: "Проведен", rating: "10.000$", members: 9, callStatus: "🟡Скоро", fullDetails: { description: "Маньяки охотятся на людей в абсолютно темной комнате", tasks: "", feedback: "", rewards: "", extra: "" } }
+    { id: 7, name: "Слепой убийца", platform: "somcop", organizer: "Нет", date: "15.04.26, 19:15-19:38", status: "Проведен", rating: "10.000$", members: 9, callStatus: "🟡Скоро", fullDetails: { description: "Маньяки охотятся на людей в абсолютно темной комнате", tasks: "", feedback: "", rewards: "", extra: "" } },
+    { id: 8, name: "Прятки на даст 2", platform: "somcop", organizer: "Нет", date: "15.04.26, 19:41-19:55", status: "Проведен", rating: "10.000$", members: 11, callStatus: "🟡Скоро", fullDetails: { description: "2 маньяка охотилось за людьми на карте даст 2", tasks: "", feedback: "", rewards: "", extra: "" } },
+    { id: 9, name: "Отель маньяка", platform: "somcop", organizer: "Нет", date: "15.04.26, 20:40 - 21:00", status: "Проведен", rating: "10.000$", members: 12, callStatus: "🟡Скоро", fullDetails: { description: "маньяк закрыл в тюрьме человка,задача выживших-спасти человека,найти код для открытия тюрьмы,маньяк охотится за вышившими во время процесса", tasks: "", feedback: "", rewards: "", extra: "" } },
+    { id: 10, name: "Украсть или разделить", platform: "somcop", organizer: "Нет", date: "15.04.26, 21:37 - 21:45", status: "Проведен", rating: "18.000$", members: 2, callStatus: "🟡Скоро", fullDetails: { description: "Игроки выбирают разделить или украсть деньги,если украдет один,получает все,украдут оба,ничего не получат", tasks: "", feedback: "", rewards: "", extra: "" } }
 ];
 
 let teamData = [
@@ -751,7 +754,7 @@ function renderAddEventForm() {
             </div>
             <div class="form-group" style="background: var(--badge-bg); border-radius: 20px; padding: 1rem; margin-top: 1rem;">
                 <label style="color: var(--text-primary);">📸 Скриншоты/видео</label>
-                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Скиньте фотографии и видео в <strong>ветку канала ┣📸・ивент-скрины</strong></p>
+                <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Скиньте фотографии и видео в <strong>ветку бот-отчетность</strong></p>
                 <small style="color: var(--text-muted);">2-3 скриншота или видео, сделанных во время ивента</small>
             </div>
             <button class="submit-btn" id="sendEventToDiscordBtn">📤 Отправить в Discord</button>
@@ -817,7 +820,7 @@ async function sendEventToDiscord() {
             { name: "🎁 Призы", value: prizes, inline: false },
             { name: "👤 Организатор", value: organizer, inline: true },
             { name: "🤝 Помощники", value: helpers, inline: true },
-            { name: "📸 Скриншоты/видео", value: "Скинуты в ветку канала ┣📸・ивент-скрины", inline: false }
+            { name: "📸 Скриншоты/видео", value: "Скинуть в ветку канала!", inline: false }
         ],
         footer: { text: "Ивент-отдел UnionTeam" },
         timestamp: new Date().toISOString()
