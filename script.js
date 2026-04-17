@@ -311,21 +311,8 @@ function updateClock() {
 }
 setInterval(updateClock, 1000); 
 updateClock();
-
-function initTheme() { 
-    if(localStorage.getItem('unionTheme') === 'dark') { 
-        document.body.classList.add('dark'); 
-        document.getElementById('themeToggleBtn').innerHTML = '🌙'; 
-    } 
-}
-function toggleTheme() { 
-    document.body.classList.toggle('dark'); 
-    const isDark = document.body.classList.contains('dark'); 
-    localStorage.setItem('unionTheme', isDark ? 'dark' : 'light'); 
-    document.getElementById('themeToggleBtn').innerHTML = isDark ? '🌙' : '🌞'; 
-}
-document.getElementById('themeToggleBtn')?.addEventListener('click', toggleTheme);
-initTheme();
+    
+document.body.classList.add('dark');
 
 // НАВИГАЦИЯ
 const navs = document.querySelectorAll('.nav-item');
