@@ -10,7 +10,8 @@ let eventsData = [
     { id: 8, name: "Прятки на даст 2", platform: "somcop", organizer: "Нет", date: "15.04.26, 19:41-19:55", status: "Проведен", rating: "10.000$", members: 11, callStatus: "🟡Скоро", fullDetails: { description: "2 маньяка охотилось за людьми на карте даст 2", tasks: "", feedback: "", rewards: "", extra: "" } },
     { id: 9, name: "Отель маньяка", platform: "somcop", organizer: "Нет", date: "15.04.26, 20:40 - 21:00", status: "Проведен", rating: "10.000$", members: 12, callStatus: "🟡Скоро", fullDetails: { description: "маньяк закрыл в тюрьме человка,задача выживших-спасти человека,найти код для открытия тюрьмы,маньяк охотится за вышившими во время процесса", tasks: "", feedback: "", rewards: "", extra: "" } },
     { id: 10, name: "Украсть или разделить", platform: "somcop", organizer: "Нет", date: "15.04.26, 21:37 - 21:45", status: "Проведен", rating: "18.000$", members: 2, callStatus: "🟡Скоро", fullDetails: { description: "Игроки выбирают разделить или украсть деньги,если украдет один,получает все,украдут оба,ничего не получат", tasks: "", feedback: "", rewards: "", extra: "" } },
-    { id: 11, name: "Правильная Викторина", platform: "Foxy", organizer: "Нет", date: "17.04.26, 4.03 - 4.13", status: "Проведен", rating: "20.000$", members: 2, callStatus: "🟡Скоро", fullDetails: { description: "Игроки выбирают разделить или украсть деньги,если украдет один,получает все,украдут оба,ничего не получат", tasks: "", feedback: "", rewards: "", extra: "" } }
+    { id: 11, name: "Правильная Викторина", platform: "Foxy", organizer: "Нет", date: "17.04.26, 4.03 - 4.13", status: "Проведен", rating: "20.000$", members: 2, callStatus: "🟡Скоро", fullDetails: { description: "Игроки выбирают разделить или украсть деньги,если украдет один,получает все,украдут оба,ничего не получат", tasks: "", feedback: "", rewards: "", extra: "" } },
+    { id: 12, name: "Битва Джагера", platform: "T1Ran", organizer: "Нет", date: "17.04.26, 17.50- 18.00", status: "Проведен", rating: "10.000$", members: 10, callStatus: "🟡Скоро", fullDetails: { description: "Игрокам надо убить джагера с 2500 хп", tasks: "", feedback: "", rewards: "", extra: "" } }
 ];
 
 let teamData = [
@@ -351,8 +352,311 @@ navs.forEach(n => {
                 </div>
             `;
         } else if (tab === 'event_guide') {
-            document.getElementById('eventDynamicContent').innerHTML = `<div class="methodology-container">...</div>`;
-        }
+    document.getElementById('eventDynamicContent').innerHTML = `
+        <style>
+            .methodology-container {
+                background: var(--card-bg);
+                border-radius: 32px;
+                padding: 2rem;
+                border: 1px solid var(--card-border);
+                box-shadow: 0 8px 32px var(--shadow-color);
+            }
+            
+            .methodology-header {
+                text-align: center;
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+                border-bottom: 2px solid var(--card-border);
+            }
+            
+            .methodology-title {
+                font-size: 2.5rem;
+                font-weight: 800;
+                background: linear-gradient(135deg, #fd72f4, #ffaa44, #44ffaa);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                margin-bottom: 0.5rem;
+            }
+            
+            .methodology-subtitle {
+                font-size: 1.3rem;
+                color: var(--text-muted);
+                letter-spacing: 2px;
+            }
+            
+            .section-block {
+                background: var(--badge-bg);
+                border-radius: 24px;
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+                transition: transform 0.2s;
+            }
+            
+            .section-block:hover {
+                transform: translateY(-2px);
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 3px solid;
+                display: inline-block;
+            }
+            
+            .section-title.green { color: #44ffaa; border-color: #44ffaa; }
+            .section-title.orange { color: #ffaa44; border-color: #ffaa44; }
+            .section-title.red { color: #ff6666; border-color: #ff6666; }
+            .section-title.blue { color: #44aaff; border-color: #44aaff; }
+            .section-title.purple { color: #fd72f4; border-color: #fd72f4; }
+            .section-title.pink { color: #ff66cc; border-color: #ff66cc; }
+            
+            .rule-list {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .rule-list li {
+                padding: 0.5rem 0;
+                padding-left: 1.5rem;
+                position: relative;
+                color: var(--text-primary);
+            }
+            
+            .rule-list li::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                color: #ffaa44;
+                font-size: 1.2rem;
+            }
+            
+            .rank-card {
+                background: var(--card-bg);
+                border-radius: 20px;
+                padding: 1rem;
+                margin-bottom: 1rem;
+                border-left: 4px solid;
+                transition: all 0.2s;
+            }
+            
+            .rank-card:hover {
+                transform: translateX(5px);
+            }
+            
+            .rank-card.ivent { border-left-color: #ffaa44; }
+            .rank-card.senior { border-left-color: #44ffaa; }
+            .rank-card.zam { border-left-color: #fd72f4; }
+            .rank-card.glava { border-left-color: #ff4444; }
+            
+            .rank-name {
+                font-size: 1.2rem;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .rank-desc {
+                font-size: 0.85rem;
+                color: var(--text-muted);
+                margin-top: 0.5rem;
+                line-height: 1.4;
+            }
+            
+            .norm-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .norm-card {
+                background: var(--card-bg);
+                border-radius: 16px;
+                padding: 1rem;
+                text-align: center;
+                border: 1px solid var(--card-border);
+            }
+            
+            .norm-day {
+                font-size: 1rem;
+                font-weight: 700;
+                color: #ffaa44;
+            }
+            
+            .norm-value {
+                font-size: 0.85rem;
+                color: var(--text-primary);
+                margin-top: 0.3rem;
+            }
+            
+            .punishment-card {
+                background: linear-gradient(135deg, rgba(255,68,68,0.1), rgba(255,68,68,0.05));
+                border-radius: 16px;
+                padding: 1rem;
+                margin-bottom: 0.8rem;
+                border-left: 3px solid #ff4444;
+            }
+            
+            .stats-mini {
+                display: inline-block;
+                background: var(--badge-bg);
+                padding: 0.2rem 0.6rem;
+                border-radius: 20px;
+                font-size: 0.7rem;
+                color: var(--text-muted);
+                margin-left: 0.5rem;
+            }
+        </style>
+        
+        <div class="methodology-container">
+            <div class="methodology-header">
+                <div class="methodology-title">📖 Методичка Ивентологов</div>
+                <div class="methodology-subtitle">ОСНОВНЫЕ ПРАВИЛА ОТДЕЛА ИВЕНТОЛОГИИ</div>
+            </div>
+            
+            <!-- ЧТО МОЖНО ДЕЛАТЬ -->
+            <div class="section-block">
+                <div class="section-title green">✅ ЧТО МОЖНО ДЕЛАТЬ?</div>
+                <div class="rank-card ivent">
+                    <div class="rank-name">🎮 Кто может проводить ивенты?</div>
+                    <div class="rank-desc">Проводить ивенты можно с ранга «Оператор», если вы состоите в отделе Ивентологии. С рангов ниже — только с разрешения Главы отдела или Куратора сервера.</div>
+                </div>
+                <div class="rank-card ivent">
+                    <div class="rank-name">👥 Кол-во администрации на ивенте</div>
+                    <div class="rank-desc">В ивенте может участвовать не более 25% от всей наборной администрации. <span class="stats-mini">Например: 10 админов → максимум 3</span></div>
+                </div>
+                <div class="rank-card ivent">
+                    <div class="rank-name">⏸ Игнор завалов</div>
+                    <div class="rank-desc">Если завал начался во время ивента, его разрешено игнорировать.</div>
+                </div>
+                <div class="rank-card ivent">
+                    <div class="rank-name">🎯 Самостоятельность</div>
+                    <div class="rank-desc">Каждый Ивентер может проводить ивенты без разрешения от Ст. Администрации. Если ты на испытательном сроке — нужно одобрение от Ст. Ивентера.</div>
+                </div>
+                <div class="rank-card ivent">
+                    <div class="rank-name">💰 Награды</div>
+                    <div class="rank-desc">Если игрок использует баги/преимущества/нарушал правила — Ивентер может не выдавать приз. Если победа честная — Ивентер обязан выдать приз.</div>
+                </div>
+                <div class="rank-card ivent">
+                    <div class="rank-name">🎭 RP-Мероприятия</div>
+                    <div class="rank-desc">Помимо ивентов, вам также доступны РП-Мероприятия — сюжетные ролевые отыгровки в пределах RP-зоны. РП-мероприятие засчитывается как полноценный ивент.</div>
+                </div>
+            </div>
+            
+            <!-- ЧТО ВЫ ОБЯЗАНЫ ДЕЛАТЬ -->
+            <div class="section-block">
+                <div class="section-title orange">⚠️ ЧТО ВЫ ОБЯЗАНЫ ДЕЛАТЬ?</div>
+                <div class="rank-card senior">
+                    <div class="rank-name">📝 После ивента/РП-Мероприятия</div>
+                    <div class="rank-desc">Убрать всё, что было построено/создано. Написать отчёт в специальный канал.</div>
+                </div>
+                <div class="rank-card senior">
+                    <div class="rank-name">🐌 Лаги</div>
+                    <div class="rank-desc">Если во время ивента появились лаги или высокий пинг — ивент нужно как можно быстрее прекратить и сообщить Главе/Зам. Главы.</div>
+                </div>
+            </div>
+            
+            <!-- ЧТО НЕЛЬЗЯ ДЕЛАТЬ -->
+            <div class="section-block">
+                <div class="section-title red">🚫 ЧТО НЕЛЬЗЯ ДЕЛАТЬ?</div>
+                <ul class="rule-list">
+                    <li>Запрещается привлекать игроков к РП-мероприятию через /OOC, участие должно происходить естественным RP путем.</li>
+                    <li>Нельзя принуждать игроков к участию в мероприятии.</li>
+                    <li>Создавать мероприятия, мешающие обычному RP-процессу сервера.</li>
+                    <li>Запрещено начинать ивенты во время активных завалов.</li>
+                    <li>Запрещено проводить 2 и более ивентов одновременно. Если кто-то уже проводит ивент — ждём, пока закончат.</li>
+                    <li>Запрещено мешать подготовке или проведению ивентов (включая ивент-мастеров).</li>
+                    <li>Категорически запрещено проводить ивенты в RP зоне. Исключение: РП-Мероприятия.</li>
+                    <li>Запрещается проводить ивенты, которые нацелены на разжигание ненависти, дискриминацию, имеют деструктивный или политический контент.</li>
+                    <li>Запрещено выпрашивать бонусы/привилегии за ивенты (будут наказания и возможно снятие).</li>
+                    <li>Донатной администрации категорически запрещено проводить ивенты. Даже под вашим присмотром и даже в качестве помощников.</li>
+                </ul>
+            </div>
+            
+            <!-- УТОЧНЕНИЯ -->
+            <div class="section-block">
+                <div class="section-title purple">📌 УТОЧНЕНИЯ</div>
+                <ul class="rule-list">
+                    <li>При проведении РП-мероприятий обязательно соблюдение всех действующих правил сервера.</li>
+                    <li>Повышение до Ивент-Мастера не будет. Однако попросить его помощь вы можете в канале ┣🍽️・запрос-вещей.</li>
+                    <li>Набирать людей в Ивентологию могут только Глава и Зам. Главы отдела.</li>
+                    <li>Отдел Ивентологии является «совмещенным». Любой администратор из другого отдела может попасть к нам при наличии свободных слотов.</li>
+                </ul>
+            </div>
+            
+            <!-- МАКСИМАЛЬНОЕ КОЛИЧЕСТВО МЕСТ -->
+            <div class="section-block">
+                <div class="section-title blue">👥 Максимальное количество мест в отделе — 9</div>
+                <div class="norm-grid">
+                    <div class="norm-card"><div class="norm-day">👑 Глава</div><div class="norm-value">1 место</div></div>
+                    <div class="norm-card"><div class="norm-day">📿 Зам. Главы</div><div class="norm-value">1 место</div></div>
+                    <div class="norm-card"><div class="norm-day">🍉 Ст. Ивентер</div><div class="norm-value">1 место</div></div>
+                    <div class="norm-card"><div class="norm-day">🤡 Ивентеры</div><div class="norm-value">7 мест</div></div>
+                </div>
+            </div>
+            
+            <!-- РАНГИ -->
+            <div class="section-block">
+                <div class="section-title pink">🏅 РАНГИ</div>
+                <div class="rank-card ivent"><div class="rank-name">🤡 Ивентер</div><div class="rank-desc">Имеет право проводить ивенты без разрешения со стороны Ст. Ивентера, но обязуется подчиняться всем адекватным приказам со стороны старших представителей отдела. Может игнорировать завал в случае, если ивент начался до завала.</div></div>
+                <div class="rank-card senior"><div class="rank-name">🍉 Ст. Ивентер</div><div class="rank-desc">Имеет все полномочия Ивентера, а также имеет право корректировать работу Ивентеров и давать рекомендации по поводу ивентов, выдавать наказания за их ошибки, а также одобрять отчётности.</div></div>
+                <div class="rank-card zam"><div class="rank-name">📿 Зам. Главы Ивентологии</div><div class="rank-desc">Имеет все полномочия нижестоящих рангов, а также имеет право набирать новых кадров в отдел, определять курс развития отдела и изменять норму и правила.</div></div>
+                <div class="rank-card glava"><div class="rank-name">👑 Глава Ивентологии</div><div class="rank-desc">Имеет полное владение над отделом Ивентологии, может самостоятельно изменять состав отдела Ивентологии и их норму/правила.</div></div>
+            </div>
+            
+            <!-- НОРМА -->
+            <div class="section-block">
+                <div class="section-title pink">📊 НОРМА</div>
+                <ul class="rule-list">
+                    <li>Ивентер из другого отдела — кол-во тикетов из вашего отдела | 2 ивента в неделю</li>
+                    <li>Ивентер — 35 тикетов | 3 ивента в неделю</li>
+                    <li>Ст. Ивентер — 25 тикетов</li>
+                    <li>Зам. Главы Ивентологии — не имеет нормы</li>
+                    <li>Глава Ивентологии — не имеет нормы</li>
+                </ul>
+            </div>
+            
+            <!-- НОРМА ПОСЛЕ ОТПУСКА -->
+            <div class="section-block">
+                <div class="section-title orange">📅 Норма после отпуска/заморозки/вступлении в отдел</div>
+                <div class="norm-grid">
+                    <div class="norm-card"><div class="norm-day">ПН</div><div class="norm-value">35 тикетов | 3 ивента</div></div>
+                    <div class="norm-card"><div class="norm-day">ВТ</div><div class="norm-value">35 тикетов | 3 ивента</div></div>
+                    <div class="norm-card"><div class="norm-day">СР</div><div class="norm-value">30 тикетов | 2 ивента</div></div>
+                    <div class="norm-card"><div class="norm-day">ЧТ</div><div class="norm-value">25 тикетов | 1 ивент</div></div>
+                    <div class="norm-card"><div class="norm-day">ПТ</div><div class="norm-value">20 тикетов | 1 ивент</div></div>
+                    <div class="norm-card"><div class="norm-day">СБ</div><div class="norm-value">10 тикетов | 1 ивент</div></div>
+                    <div class="norm-card"><div class="norm-day">ВС</div><div class="norm-value">Освобождены от нормы</div></div>
+                </div>
+                <div class="rank-card ivent" style="margin-top: 1rem;">
+                    <div class="rank-name">📌 Примечание</div>
+                    <div class="rank-desc">Если вы состоите в другом отделе и вышли с отпуска/мороза — с четверга вы обязуетесь провести 1 ивент. Если с понедельника и до среды – 2 ивента.</div>
+                </div>
+            </div>
+            
+            <!-- НАКАЗАНИЯ -->
+            <div class="section-block">
+                <div class="section-title red">⚖️ Наказания за невыполнение нормы</div>
+                <div class="punishment-card"><strong>25-35 тикетов и 2-3 ивента:</strong> В случае уважительной причины недобор прощается, в другом случае выдается предупреждение.</div>
+                <div class="punishment-card"><strong>15-24 тикета и 1-2 ивента:</strong> В случае уважительной причины выдается предупреждение, в другом случае выдается выговор.</div>
+                <div class="punishment-card"><strong>0-14 тикета и 0-1 ивент:</strong> В случае уважительной причины выдается выговор, в другом случае снятие или два выговора.</div>
+                <div class="punishment-card"><strong>Для ивентеров из другого отдела:</strong> Если проведено менее двух ивентов, выдается предупреждение. При уважительной причине недобор прощается.</div>
+            </div>
+            
+            <!-- ЗАРПЛАТА -->
+            <div class="section-block">
+                <div class="section-title green">💰 Зарплата</div>
+                <div class="rank-card glava">
+                    <div class="rank-desc">Зарплата выдаётся только за выполненные тикеты. Тех. Администрация не намеревается выдавать ЗП за ивенты, возможно когда-то в будущем у вас будет вознаграждение за ваши прекрасные ивенты.</div>
+                </div>
+            </div>
+        </div>
+    `;
+}
     });
 });
 
@@ -431,7 +735,7 @@ async function sendEventToDiscord() {
         await fetch(webhookURL, {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                content: `<@1246076621484724320> <@1066705962972495922> Новый ивент от ${organizer}!`,
+                content: `<@1246076621484724320> Новый ивент от ${organizer}!`,
                 embeds: [{
                     title: "📅 Новый ивент", color: 0x5865F2,
                     fields: [
