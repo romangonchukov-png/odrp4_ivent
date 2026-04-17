@@ -830,7 +830,7 @@ async function sendEventToDiscord() {
     };
     
     const payload = {
-        content: `<@1246076621484724320> <@1066705962972495922> Новый ивент от ${organizer}!`,
+        content: `<@1246076621484724320> Новый ивент от ${organizer}!`,
         embeds: [embed],
         username: "Ивент-отдел UnionTeam",
         avatar_url: "https://i.ytimg.com/vi/_pMmC52HB2k/hqdefault.jpg"
