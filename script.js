@@ -378,6 +378,19 @@ function renderAddEventForm() {
     document.getElementById('sendEventToDiscordBtn')?.addEventListener('click', sendEventToDiscord);
 }
 
+// ========== ПОЛУЧЕНИЕ ВЕБХУКА ИЗ GITHUB (НОВАЯ ССЫЛКА) ==========
+async function getWebhookUrl() {
+    const GIST_URL = "https://gist.githubusercontent.com/t1ranxost/1e639fc648adcc8208d8dfe15efba377/raw/11531ec5e2f7c00f263569e48cba3cc7e5f3b37d/config.json";
+    try {
+        const response = await fetch(GIST_URL);
+        const data = await response.json();
+        return data.webhook;
+    } catch(e) {
+        console.error('Ошибка получения вебхука:', e);
+        return null;
+    }
+}
+
 async function sendEventToDiscord() {
     const name = document.getElementById('eventName')?.value.trim();
     const description = document.getElementById('eventDescription')?.value.trim();
@@ -406,8 +419,12 @@ async function sendEventToDiscord() {
     renderTeamTable();
     updateNormStats();
     
-    // НОВЫЙ URL ВЕБХУКА
-    const webhookURL = "https://discord.com/api/webhooks/1494434308629200906/wzTarhNMe2zTA3x6tO7gn_maa52EXNVcshqse6-2SnKFJ-QulJehmpiCGGWyFjgJ5xgS";
+    // ПОЛУЧАЕМ ВЕБХУК ИЗ GITHUB GIST ПО НОВОЙ ССЫЛКЕ
+    const webhookURL = await getWebhookUrl();
+    if (!webhookURL) {
+        showNotif('❌ Не удалось загрузить вебхук. Проверьте ссылку на Gist.', true);
+        return;
+    }
     
     try {
         await fetch(webhookURL, {
@@ -429,7 +446,9 @@ async function sendEventToDiscord() {
             })
         });
         showNotif('✅ Ивент добавлен!');
-    } catch(e) { showNotif('❌ Ошибка отправки', true); }
+    } catch(e) {
+        showNotif('❌ Ошибка отправки в Discord', true);
+    }
 }
 
 // АВТОРИЗАЦИЯ
@@ -546,4 +565,4 @@ if (bg) {
         targetY = (e.clientY / window.innerHeight - 0.5) * 15;
     });
     smoothAnimate();
-}
+        }
