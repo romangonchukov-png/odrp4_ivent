@@ -95,6 +95,7 @@ function loadAllData() {
 
 // ========== СИСТЕМА ЛОГИНОВ И ПАРОЛЕЙ ==========
 const VALID_LOGINS = [
+    "кусочек шаурмы",
     "Foxy",
     "somcop",
     "T1Ran",
