@@ -90,7 +90,6 @@ function loadAllData() {
     }
 }
 
-// ========== ЗАГРУЗКА КОНФИГА (ВЕБХУК + ПАРОЛИ) ИЗ GITHUB ==========
 let cachedConfig = null;
 
 async function loadConfig() {
