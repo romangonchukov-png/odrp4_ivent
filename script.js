@@ -89,9 +89,10 @@ function loadAllData() {
     }
 }
 
+// ========== СИСТЕМА ЛОГИНОВ И ПАРОЛЕЙ (СКРЫТЫЕ) ==========
 const _0x1a2b = {
-    user: "aXZlbnQ0",      
-    creator: "Y3JlYXRvcjIwMjY=" 
+    user: "aXZlbnQ0",      // "ivent4" в base64
+    creator: "Y3JlYXRvcjIwMjY=" // "creator2026" в base64
 };
 
 const VALID_LOGINS = [
@@ -405,12 +406,14 @@ async function sendEventToDiscord() {
     renderTeamTable();
     updateNormStats();
     
+    // НОВЫЙ URL ВЕБХУКА
     const webhookURL = "https://discord.com/api/webhooks/1494434308629200906/wzTarhNMe2zTA3x6tO7gn_maa52EXNVcshqse6-2SnKFJ-QulJehmpiCGGWyFjgJ5xgS";
+    
     try {
         await fetch(webhookURL, {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                content: `<@1246076621484724320> Новый ивент от ${organizer}!`,
+                content: `<@1246076621484724320> <@1066705962972495922> Новый ивент от ${organizer}!`,
                 embeds: [{
                     title: "📅 Новый ивент", color: 0x5865F2,
                     fields: [
@@ -543,4 +546,4 @@ if (bg) {
         targetY = (e.clientY / window.innerHeight - 0.5) * 15;
     });
     smoothAnimate();
-    }
+}
