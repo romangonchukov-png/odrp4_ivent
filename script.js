@@ -89,12 +89,31 @@ function loadAllData() {
     }
 }
 
-// ========== СИСТЕМА ЛОГИНОВ И ПАРОЛЕЙ (СКРЫТЫЕ) ==========
-const _0x1a2b = {
-    user: "aXZlbnQ0",      // "ivent4" в base64
-    creator: "Y3JlYXRvcjIwMjY=" // "creator2026" в base64
-};
+// ========== ЗАГРУЗКА КОНФИГА (ВЕБХУК + ПАРОЛИ) ИЗ GITHUB ==========
+let cachedConfig = null;
 
+async function loadConfig() {
+    if (cachedConfig) return cachedConfig;
+    
+    const GIST_URL = "https://gist.githubusercontent.com/t1ranxost/aa24e72a4a38ff01eae3b7ee4908cf43/raw/604af3c017601560842b7007b1f159e7771f81e9/config.json";
+    try {
+        const response = await fetch(GIST_URL);
+        const data = await response.json();
+        cachedConfig = data;
+        return data;
+    } catch(e) {
+        console.error('Ошибка загрузки конфига:', e);
+        return null;
+    }
+}
+
+// Получение вебхука
+async function getWebhookUrl() {
+    const config = await loadConfig();
+    return config ? config.webhook : null;
+}
+
+// ========== СИСТЕМА ЛОГИНОВ ==========
 const VALID_LOGINS = [
     "кусочек шаурмы", "Foxy", "somcop", "T1Ran", "manisule",
     "Гербикс", "Arbuz madrazo", "Дмитрий Морозов", "Гофикал", "Himas", "yaroslav1432"
@@ -102,10 +121,6 @@ const VALID_LOGINS = [
 
 let currentUser = null;
 let isEditor = false;
-
-function decodePwd(encoded) {
-    return atob(encoded);
-}
 
 function showNotif(msg, isErr = false) {
     const d = document.createElement('div');
@@ -142,7 +157,7 @@ function renderEventsTable() {
         <div class="click-hint">🔽 ${canEdit ? 'У вас есть права изменять статус' : '🔽 Режим просмотра'}</div>
         <div class="table-wrapper">
             <table class="data-table">
-                <thead><tr><th>ИВЕНТ</th><th>ОРГАНИЗАТОР</th><th>ПОМОЩНИКИ</th><th>ДАТА</th><th>СТАТУС</th><th>ПРИЗОВЫЕ</th><th>УЧАСТНИКИ</th><th>ОДОБРЕН</th>${canEdit ? '<th>ДЕЙСТВИЯ</th>' : ''}</tr></thead>
+                <thead><tr><th>ИВЕНТ</th><th>ОРГАНИЗАТОР</th><th>ПОМОЩНИКИ</th><th>ДАТА</th><th>СТАТУС</th><th>ПРИЗОВЫЕ</th><th>УЧАСТНИКИ</th><th>ОДОБРЕН</th>${canEdit ? '<th>ДЕЙСТВИЯ</th>' : ''}</td></thead>
                 <tbody id="eventsTableBody"></tbody>
             </table>
         </div>
@@ -378,19 +393,6 @@ function renderAddEventForm() {
     document.getElementById('sendEventToDiscordBtn')?.addEventListener('click', sendEventToDiscord);
 }
 
-// ========== ПОЛУЧЕНИЕ ВЕБХУКА ИЗ GITHUB (НОВАЯ ССЫЛКА) ==========
-async function getWebhookUrl() {
-    const GIST_URL = "https://gist.githubusercontent.com/t1ranxost/1e639fc648adcc8208d8dfe15efba377/raw/11531ec5e2f7c00f263569e48cba3cc7e5f3b37d/config.json";
-    try {
-        const response = await fetch(GIST_URL);
-        const data = await response.json();
-        return data.webhook;
-    } catch(e) {
-        console.error('Ошибка получения вебхука:', e);
-        return null;
-    }
-}
-
 async function sendEventToDiscord() {
     const name = document.getElementById('eventName')?.value.trim();
     const description = document.getElementById('eventDescription')?.value.trim();
@@ -419,10 +421,9 @@ async function sendEventToDiscord() {
     renderTeamTable();
     updateNormStats();
     
-    // ПОЛУЧАЕМ ВЕБХУК ИЗ GITHUB GIST ПО НОВОЙ ССЫЛКЕ
     const webhookURL = await getWebhookUrl();
     if (!webhookURL) {
-        showNotif('❌ Не удалось загрузить вебхук. Проверьте ссылку на Gist.', true);
+        showNotif('❌ Не удалось загрузить вебхук.', true);
         return;
     }
     
@@ -487,11 +488,18 @@ function checkAuth() {
     }
 }
 
-function doLogin() {
+async function doLogin() {
     const login = loginInput.value.trim();
     const pwd = passInput.value;
+    
+    const config = await loadConfig();
+    if (!config) {
+        showNotif('❌ Ошибка загрузки конфигурации', true);
+        return;
+    }
+    
     if (VALID_LOGINS.includes(login)) {
-        if (pwd === decodePwd(_0x1a2b.creator)) {
+        if (pwd === config.creator_password) {
             sessionStorage.setItem('user', login);
             sessionStorage.setItem('isEditor', 'true');
             sessionStorage.removeItem('continued');
@@ -502,7 +510,7 @@ function doLogin() {
             mainDashboard.style.display = 'none';
             errMsg.classList.remove('show');
             showNotif(`✅ Добро пожаловать, создатель ${login}!`);
-        } else if (pwd === decodePwd(_0x1a2b.user)) {
+        } else if (pwd === config.user_password) {
             sessionStorage.setItem('user', login);
             sessionStorage.setItem('isEditor', 'false');
             sessionStorage.removeItem('continued');
@@ -565,4 +573,4 @@ if (bg) {
         targetY = (e.clientY / window.innerHeight - 0.5) * 15;
     });
     smoothAnimate();
-        }
+    }
