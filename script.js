@@ -754,7 +754,7 @@ function renderAddEventForm() {
                 <small style="color: var(--text-muted);">Кто помогал проводить ивент</small>
             </div>
             <div class="form-group" style="background: var(--badge-bg); border-radius: 20px; padding: 1rem; margin-top: 1rem;">
-                <label style="color: var(--text-primary);">📸 Скриншоты/видео</label>
+                <label style="color: var(--text-primary);">📸 Скриншоты или видео</label>
                 <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Скиньте фотографии и видео в <strong>ветку бот-отчетность</strong></p>
                 <small style="color: var(--text-muted);">2-3 скриншота или видео, сделанных во время ивента</small>
             </div>
@@ -821,7 +821,7 @@ async function sendEventToDiscord() {
             { name: "🎁 Призы", value: prizes, inline: false },
             { name: "👤 Организатор", value: organizer, inline: true },
             { name: "🤝 Помощники", value: helpers, inline: true },
-            { name: "📸 Скриншоты/видео", value: "Скинуть в ветку канала!", inline: false }
+            { name: "📸 Скриншоты или видео", value: "Скинуть в ветку канала!", inline: false }
         ],
         footer: { text: "Ивент-отдел UnionTeam" },
         timestamp: new Date().toISOString()
