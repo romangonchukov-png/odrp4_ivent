@@ -1,4 +1,4 @@
-here// ========== ТВОИ ДАННЫЕ ==========
+// ========== ТВОИ ДАННЫЕ ==========
 let eventsData = [
     { id: 1, name: "Пол это лава", platform: "T1Ran", organizer: "Нет", date: "13.04.26, 18.30 - 18.45", status: "Проведен", rating: "10.000$", members: 10, callStatus: "🟡Скоро", fullDetails: { description: "Игроки дерутся на кулаках 1 на 1,есть финал,полуфинал", tasks: "", feedback: "", rewards: "", extra: "" } },
     { id: 2, name: "Паркур", platform: "somcop", organizer: "Нет", date: "14.04.26, 19.15 - 19:25", status: "Проведен", rating: "10.000$", members: 9, callStatus: "🟡Скоро", fullDetails: { description: "паркур средней сложности и длины,дается неограниченное количество попыток для прохождения", tasks: "", feedback: "", rewards: "", extra: "" } },
@@ -9,8 +9,7 @@ let eventsData = [
     { id: 7, name: "Слепой убийца", platform: "somcop", organizer: "Нет", date: "15.04.26, 19:15-19:38", status: "Проведен", rating: "10.000$", members: 9, callStatus: "🟡Скоро", fullDetails: { description: "Маньяки охотятся на людей в абсолютно темной комнате", tasks: "", feedback: "", rewards: "", extra: "" } },
     { id: 8, name: "Прятки на даст 2", platform: "somcop", organizer: "Нет", date: "15.04.26, 19:41-19:55", status: "Проведен", rating: "10.000$", members: 11, callStatus: "🟡Скоро", fullDetails: { description: "2 маньяка охотилось за людьми на карте даст 2", tasks: "", feedback: "", rewards: "", extra: "" } },
     { id: 9, name: "Отель маньяка", platform: "somcop", organizer: "Нет", date: "15.04.26, 20:40 - 21:00", status: "Проведен", rating: "10.000$", members: 12, callStatus: "🟡Скоро", fullDetails: { description: "маньяк закрыл в тюрьме человка,задача выживших-спасти человека,найти код для открытия тюрьмы,маньяк охотится за вышившими во время процесса", tasks: "", feedback: "", rewards: "", extra: "" } },
-    { id: 10, name: "Украсть или разделить", platform: "somcop", organizer: "Нет", date: "15.04.26, 21:37 - 21:45", status: "Проведен", rating: "18.000$", members: 2, callStatus: "🟡Скоро", fullDetails: { description: "Игроки выбирают разделить или украсть деньги,если украдет один,получает все,украдут оба,ничего не получат", tasks: "", feedback: "", rewards: "", extra: "" } },
-    { id: 11, name: "Правильная Викторина", platform: "Foxy", organizer: "Нет", date: "17.04.26, 12.00 - 12.13", status: "Проведен", rating: "20.000$", members: 2, callStatus: "🟡Скоро", fullDetails: { description: "игроки отвечают на вопросы по серверу правилам и тд", tasks: "", feedback: "", rewards: "", extra: "" } }
+    { id: 10, name: "Украсть или разделить", platform: "somcop", organizer: "Нет", date: "15.04.26, 21:37 - 21:45", status: "Проведен", rating: "18.000$", members: 2, callStatus: "🟡Скоро", fullDetails: { description: "Игроки выбирают разделить или украсть деньги,если украдет один,получает все,украдут оба,ничего не получат", tasks: "", feedback: "", rewards: "", extra: "" } }
 ];
 
 let teamData = [
@@ -981,4 +980,4 @@ if (bg) {
     });
     
     smoothAnimate();
-}
+                                }
